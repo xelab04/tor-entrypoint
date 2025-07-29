@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  labels:
+    app: tor-entrypoint
+  name: tor-entrypoint
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tor-entrypoint
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: tor-entrypoint
+    spec:
+      containers:
+      - image: registry.alexbissessur.dev/tor-entrypoint:latest
+        name: tor-entrypoint
+        resources: {}
+
+        volumeMounts:
+        - name: tor-storage
+          mountPath: /var/lib/tor
+        - name: torrc
+          mountPath: /etc/tor
+
+      volumes:
+      - name: tor-storage
+        persistentVolumeClaim:
+          claimName: tor-storage
+      - name: torrc
+        configMap:
+          name: torrc
+status: {}

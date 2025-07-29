@@ -1,0 +1,5 @@
+HiddenServiceDir /var/lib/tor/nyanyamachine/
+HiddenServicePort 80 nyanyamachine-service.default.svc.cluster.local:80
+
+HiddenServiceDir /var/lib/tor/alexbissessur/
+HiddenServicePort 80 ghost-svc.ghost.svc.cluster.local:80
