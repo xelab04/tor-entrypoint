@@ -1,6 +1,10 @@
 apiVersion: v1
 data:
   torrc: |
+    Log notice stdout
+    # Log info stdout
+    Log debug stdout
+
     HiddenServiceDir /var/lib/tor/nyanyamachine/
     HiddenServicePort 80 nyanyamachine-service.default.svc.cluster.local:80
 
