@@ -6,6 +6,9 @@ data:
 
     HiddenServiceDir /var/lib/tor/alexbissessur/
     HiddenServicePort 80 ghost-svc.ghost.svc.cluster.local:80
+
+    HiddenServiceDir /var/lib/tor/meetup/
+    HiddenServicePort 80 meetups-svc.meetup.svc.cluster.local:8000
 kind: ConfigMap
 metadata:
   creationTimestamp: null
