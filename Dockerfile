@@ -7,3 +7,4 @@ RUN zypper -n addrepo https://download.opensuse.org/repositories/network/SLE_15/
 RUN zypper -n refresh
 RUN zypper -n install tor
 
+CMD ["tor"]
